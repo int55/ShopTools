@@ -42,7 +42,9 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(intent1);
                         break;
                     case 2:
-                       // Intent intent2 = new Intent((getApplicationContext(), ))
+                        Intent intent2 = new Intent(getApplicationContext(), GrinderCategoryActivity.class);
+                        startActivity(intent2);
+                        break;
                 }
             }
         });
