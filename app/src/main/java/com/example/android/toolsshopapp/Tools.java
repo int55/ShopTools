@@ -2,13 +2,13 @@ package com.example.android.toolsshopapp;
 
 import androidx.annotation.NonNull;
 
-public class Drill {
+public class Tools {
 
     private String title;
     private String info;
     private int idImageResource;
 
-    public Drill(String title, String info, int idImageResource) {
+    public Tools(String title, String info, int idImageResource) {
         this.title = title;
         this.info = info;
         this.idImageResource = idImageResource;

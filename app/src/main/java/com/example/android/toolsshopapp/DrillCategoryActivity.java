@@ -15,8 +15,7 @@ import java.util.ArrayList;
 public class DrillCategoryActivity extends AppCompatActivity {
 
     private ListView listViewDrills;
-
-    private ArrayList<Drill> drills;
+    private ArrayList<Tools> tools;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,25 +26,25 @@ public class DrillCategoryActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null) actionBar.hide();
 
-        drills = new ArrayList<>();
+        tools = new ArrayList<>();
         listViewDrills = findViewById(R.id.listViewDrills);
-        drills.add(new Drill(getString(R.string.drill_dewalt_title), getString(R.string.drill_dewalt_info), R.drawable.dewalt_drill));
-        drills.add(new Drill(getString(R.string.drill_makita_title), getString(R.string.drill_makita_info), R.drawable.makita_drill));
-        drills.add(new Drill(getString(R.string.drill_bosch_title), getString(R.string.drill_bosch_info), R.drawable.bosch_drill));
+        tools.add(new Tools(getString(R.string.dewalt_title), getString(R.string.drill_dewalt_info), R.drawable.dewalt_drill));
+        tools.add(new Tools(getString(R.string.makita_title), getString(R.string.drill_makita_info), R.drawable.makita_drill));
+        tools.add(new Tools(getString(R.string.bosch_title), getString(R.string.drill_bosch_info), R.drawable.bosch_drill));
 
-        ArrayAdapter<Drill> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, drills);
+        ArrayAdapter<Tools> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, tools);
         listViewDrills.setAdapter(adapter);
 
         listViewDrills.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 //получаем позицию элемента на котор кликнули
-                Drill drill = drills.get(position);
+                Tools tools = DrillCategoryActivity.this.tools.get(position);
 
                 Intent intent = new Intent(getApplicationContext(), DrillDetailActivity.class);
-                intent.putExtra("title", drill.getTitle());
-                intent.putExtra("info", drill.getInfo());
-                intent.putExtra("resId", drill.getIdImageResource());
+                intent.putExtra("title", tools.getTitle());
+                intent.putExtra("info", tools.getInfo());
+                intent.putExtra("resId", tools.getIdImageResource());
                 startActivity(intent);
             }
         });

@@ -38,7 +38,11 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case 1:
+                        Intent intent1 = new Intent(getApplicationContext(), HammerDrillCategoryActivity.class);
+                        startActivity(intent1);
+                        break;
                     case 2:
+                       // Intent intent2 = new Intent((getApplicationContext(), ))
                 }
             }
         });
