@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Window;
+import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
         //скрываем actionBar
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null) actionBar.hide();
+
+        //скрываем строку состояния в самом верху
+        Window window = getWindow();
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         // активность приветствия с лого
         new Handler().postDelayed(new Runnable() {

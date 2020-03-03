@@ -16,7 +16,8 @@
         <activity android:name=".DrillCategoryActivity" />
         <activity android:name=".DrillDetailActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"> <!-- только вертикальное положение -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
